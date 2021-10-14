@@ -3,6 +3,8 @@ package com.rashcomps.rashcomputers.services;
 import com.rashcomps.rashcomputers.dtos.CreateUser;
 import com.rashcomps.rashcomputers.dtos.UpdateUser;
 import com.rashcomps.rashcomputers.models.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,4 +23,6 @@ public interface UserService {
     public Boolean deleteProject(Long id);
 
     public User updateStatus(Long id, String status);
+
+    public UserDetails loadUserByEmail(String email) throws UsernameNotFoundException;
 }

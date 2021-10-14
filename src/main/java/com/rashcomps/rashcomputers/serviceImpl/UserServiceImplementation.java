@@ -7,8 +7,11 @@ import com.rashcomps.rashcomputers.models.User;
 import com.rashcomps.rashcomputers.repositories.UserRepository;
 import com.rashcomps.rashcomputers.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -89,5 +92,16 @@ public class UserServiceImplementation implements UserService {
         updatedUser.setStatus(status);
 
         return userRepository.save(updatedUser);
+    }
+
+
+    @Override
+    public UserDetails loadUserByEmail(String email) throws UsernameNotFoundException {
+        User user = userRepository.findByEmail(email);
+        if (user == null) {
+            throw new UsernameNotFoundException("User not found with email: " + email);
+        }
+        return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(),
+                new ArrayList<>());
     }
 }
