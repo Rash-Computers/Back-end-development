@@ -17,6 +17,16 @@
     <properties>
         <java.version>11</java.version>
     </properties>
+
+    <profiles>
+        <profile>
+            <id>integration-test</id>
+        </profile>
+        <profile>
+            <id>mutation-tests</id>
+        </profile>
+    </profiles>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
