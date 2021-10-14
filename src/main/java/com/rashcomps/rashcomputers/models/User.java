@@ -19,13 +19,16 @@ public class User {
 
     private String password;
 
+    private String status;
+
     public User() {
     }
 
-    public User(String email, String name, String password) {
+    public User(String email, String name, String password, String status) {
         this.email = email;
         this.name = name;
         this.password = password;
+        this.status = status;
     }
 
     public Long getId() {
@@ -60,6 +63,14 @@ public class User {
         this.password = password;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -67,6 +78,7 @@ public class User {
                 ", email='" + email + '\'' +
                 ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

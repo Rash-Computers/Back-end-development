@@ -7,10 +7,13 @@ public class UpdateUser {
 
     private String password;
 
-    public UpdateUser(String email, String name, String password) {
+    private String status;
+
+    public UpdateUser(String email, String name, String password, String status) {
         this.email = email;
         this.name = name;
         this.password = password;
+        this.status = status;
     }
 
     public String getEmail() {
@@ -37,12 +40,21 @@ public class UpdateUser {
         this.password = password;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "UpdateUser{" +
                 "email='" + email + '\'' +
                 ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

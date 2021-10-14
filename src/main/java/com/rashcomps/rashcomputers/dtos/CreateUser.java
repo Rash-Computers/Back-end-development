@@ -7,10 +7,13 @@ public class CreateUser {
 
     private String password;
 
+    private String status;
+
     public CreateUser(String email, String name, String password) {
         this.email = email;
         this.name = name;
         this.password = password;
+        this.status = "INACTIVE";
     }
 
     public String getEmail() {
@@ -37,12 +40,21 @@ public class CreateUser {
         this.password = password;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "CreateUser{" +
                 "email='" + email + '\'' +
                 ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }
