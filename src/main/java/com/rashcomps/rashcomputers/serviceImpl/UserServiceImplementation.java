@@ -9,6 +9,7 @@ import com.rashcomps.rashcomputers.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,6 +20,10 @@ import java.util.Optional;
 public class UserServiceImplementation implements UserService {
     @Autowired
     private UserRepository userRepository;
+
+
+    @Autowired
+    private PasswordEncoder bcryptEncoder;
 
     @Override
     public List<User> findAll() {
@@ -40,7 +45,7 @@ public class UserServiceImplementation implements UserService {
     @Override
     public User signupNewUser(CreateUser newUser) {
 
-        User newUserToAdd = new User(newUser.getEmail(), newUser.getName(), newUser.getPassword(), newUser.getStatus());
+        User newUserToAdd = new User(newUser.getEmail(), newUser.getName(), bcryptEncoder.encode(newUser.getPassword()), newUser.getStatus());
 
         User createdUser = userRepository.save(newUserToAdd);
 
