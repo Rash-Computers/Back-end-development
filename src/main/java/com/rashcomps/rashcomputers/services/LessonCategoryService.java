@@ -3,6 +3,7 @@ package com.rashcomps.rashcomputers.services;
 import com.rashcomps.rashcomputers.dtos.AddCategoryLesson;
 import com.rashcomps.rashcomputers.dtos.UpdateCategoryLesson;
 import com.rashcomps.rashcomputers.models.LessonCategory;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -11,6 +12,8 @@ import java.util.List;
  * @description:  Lesson category service
  */
 
+
+@Service
 
 public interface LessonCategoryService {
 
@@ -24,8 +27,10 @@ public interface LessonCategoryService {
 
     Boolean deleteById(Long id);
 
-    List<LessonCategory> changeArchiveArchiveStatus(Long id, Boolean isArchived);
+    LessonCategory changeArchiveArchiveStatus(Long id, Boolean isArchived);
 
-    List<LessonCategory> changePublishStatus(Long id,Boolean isPublished);
+    LessonCategory changePublishStatus(Long id,Boolean isPublished);
+
+    List<LessonCategory> findByArchivedAndPublishedStatuses(Boolean isPublished, Boolean isArchived);
 
 }

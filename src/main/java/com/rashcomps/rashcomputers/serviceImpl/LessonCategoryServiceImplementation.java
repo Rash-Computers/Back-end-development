@@ -7,6 +7,7 @@ import com.rashcomps.rashcomputers.models.LessonCategory;
 import com.rashcomps.rashcomputers.repositories.LessonCategoryRepository;
 import com.rashcomps.rashcomputers.services.LessonCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,6 +17,7 @@ import java.util.Optional;
  * @description:  Lesson category service implementation
  */
 
+@Service
 
 public class LessonCategoryServiceImplementation implements LessonCategoryService {
 
@@ -83,15 +85,51 @@ public class LessonCategoryServiceImplementation implements LessonCategoryServic
     }
 
     @Override
-    public List<LessonCategory> changeArchiveArchiveStatus(Long id, Boolean isArchived) {
+    public LessonCategory changeArchiveArchiveStatus(Long id, Boolean isArchived) {
 
-        return lessonCategoryRepository.findByIsPublishedAndIsArchived(isArchived,true);
+        Optional<LessonCategory> lessonCategoryOptional = lessonCategoryRepository.findById(id);
+
+        if(! lessonCategoryOptional.isPresent()) throw new LessonCategoryNotFoundException("Lesson category with id : "+id+" not found");
+
+        LessonCategory category = new LessonCategory(
+                lessonCategoryOptional.get().getName(),
+                lessonCategoryOptional.get().getDescription(),
+                lessonCategoryOptional.get().getCoverImageUrl()
+        );
+
+        category.setId(id);
+
+        category.setArchived(isArchived);
+
+        category.setPublished(lessonCategoryOptional.get().getPublished());
+
+        return lessonCategoryRepository.save(category);
     }
 
     @Override
-    public List<LessonCategory> changePublishStatus(Long id, Boolean isPublished) {
+    public LessonCategory changePublishStatus(Long id, Boolean isPublished) {
+        Optional<LessonCategory> lessonCategoryOptional = lessonCategoryRepository.findById(id);
 
-        return lessonCategoryRepository.findByIsPublishedAndIsArchived(isPublished, true);
+        if(! lessonCategoryOptional.isPresent()) throw new LessonCategoryNotFoundException("Lesson category with id : "+id+" not found");
 
+        LessonCategory category = new LessonCategory(
+                lessonCategoryOptional.get().getName(),
+                lessonCategoryOptional.get().getDescription(),
+                lessonCategoryOptional.get().getCoverImageUrl()
+        );
+
+        category.setId(id);
+
+        category.setArchived(lessonCategoryOptional.get().getArchived());
+
+        category.setPublished(isPublished);
+
+        return lessonCategoryRepository.save(category);
+    }
+
+
+    @Override
+    public List<LessonCategory> findByArchivedAndPublishedStatuses(Boolean isPublished, Boolean isArchived) {
+        return lessonCategoryRepository.findByIsPublishedAndIsArchived(isPublished,isArchived);
     }
 }

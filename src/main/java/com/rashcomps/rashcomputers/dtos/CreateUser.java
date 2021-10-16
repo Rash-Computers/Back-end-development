@@ -1,5 +1,10 @@
 package com.rashcomps.rashcomputers.dtos;
 
+/**
+ * @author : ntwari egide - Rash Computers
+ * @description:  Create User dto
+ */
+
 public class CreateUser {
     private String email;
 

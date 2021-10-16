@@ -12,19 +12,28 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 import java.util.List;
 
+
 @RestController
+
 @CrossOrigin
+
 @RequestMapping("/api/v1/users")
+
 public class UserController {
+
     @Autowired
+
     private UserServiceImplementation userServiceImplementation;
 
     @GetMapping
+
     private List<User> findAll(){
         return userServiceImplementation.findAll();
     }
 
+
     @GetMapping("/{id}")
+
     private User findById(@PathVariable Long id){
         return userServiceImplementation.findById(id);
     }
@@ -35,12 +44,18 @@ public class UserController {
         User savedUser = userServiceImplementation.signupNewUser(createUser);
 
         URI location  = ServletUriComponentsBuilder
+
                 .fromCurrentRequest()
+
                 .path("/{id}")
+
                 .buildAndExpand(savedUser.getId())
+
                 .toUri();
 
+
         return ResponseEntity.created(location).body(savedUser);
+
     }
 
     @PutMapping("/{id}")
@@ -53,6 +68,7 @@ public class UserController {
 
     @DeleteMapping("/{id}")
     private ResponseEntity<?> delete(@PathVariable Long id){
+
         userServiceImplementation.deleteProject(id);
 
         return ResponseEntity.ok().build();
