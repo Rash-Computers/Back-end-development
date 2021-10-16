@@ -2,6 +2,12 @@ package com.rashcomps.rashcomputers.exceptions;
 
 import java.util.Date;
 
+
+/**
+ * @author : ntwari egide - Rash Computers
+ * @description:  Exception response
+ */
+
 public class ExceptionResponse {
     private Date timestamp;
     private String message;

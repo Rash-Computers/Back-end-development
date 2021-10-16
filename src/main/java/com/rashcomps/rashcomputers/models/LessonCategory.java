@@ -23,12 +23,34 @@ public class LessonCategory {
 
     private String coverImageUrl;
 
+    private Boolean isPublished;
+
+    private Boolean isArchived;
+
     private LessonCategory(){}
 
     public LessonCategory(String name, String description, String coverImageUrl) {
         this.name = name;
         this.description = description;
         this.coverImageUrl = coverImageUrl;
+        this.isArchived = false;
+        this.isPublished = false;
+    }
+
+    public Boolean getPublished() {
+        return isPublished;
+    }
+
+    public void setPublished(Boolean published) {
+        isPublished = published;
+    }
+
+    public Boolean getArchived() {
+        return isArchived;
+    }
+
+    public void setArchived(Boolean archived) {
+        isArchived = archived;
     }
 
     public Long getId() {

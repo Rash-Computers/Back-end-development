@@ -9,6 +9,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
+/**
+ * @author : ntwari egide - Rash Computers
+ * @description:  User service
+ */
+
+
 @Service
 public interface UserService {
 

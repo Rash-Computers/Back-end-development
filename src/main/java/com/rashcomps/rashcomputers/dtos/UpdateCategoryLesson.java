@@ -2,16 +2,16 @@ package com.rashcomps.rashcomputers.dtos;
 
 /**
  * @author : ntwari egide - Rash Computers
- * @description:  Create Lesson Category dto
+ * @description:  Update Lesson Category dto
  */
-public class AddLesson {
+public class UpdateCategoryLesson {
     private String name;
 
     private String description;
 
     private String coverImageUrl;
 
-    public AddLesson(String name, String description, String coverImageUrl) {
+    public UpdateCategoryLesson(String name, String description, String coverImageUrl) {
         this.name = name;
         this.description = description;
         this.coverImageUrl = coverImageUrl;
@@ -43,7 +43,7 @@ public class AddLesson {
 
     @Override
     public String toString() {
-        return "AddLesson{" +
+        return "UpdateLesson{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", coverImageUrl='" + coverImageUrl + '\'' +
