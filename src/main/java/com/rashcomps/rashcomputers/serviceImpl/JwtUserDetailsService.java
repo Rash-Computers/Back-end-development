@@ -1,8 +1,7 @@
-package com.cpswork.backend.services;
+package com.rashcomps.rashcomputers.serviceImpl;
 
-import com.cpswork.backend.dtos.UserDto;
-import com.cpswork.backend.models.User;
-import com.cpswork.backend.repositories.UserRepository;
+import com.rashcomps.rashcomputers.models.User;
+import com.rashcomps.rashcomputers.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -27,27 +26,27 @@ public class JwtUserDetailsService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user = userRepository.findByUsernameOrEmail(username,username);
+		User user = userRepository.findByEmail(username);
 		if (user == null) {
 			throw new UsernameNotFoundException("User not found with username: " + username);
 		}
-		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
+		return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(),
 				new ArrayList<>());
 	}
 
-	public static Collection<? extends GrantedAuthority > getAuthorities(User userDao) {
-		String[] userRoles = userDao.getRoles().stream().map(role -> role.getName()).toArray(String[]::new);
-		Collection<GrantedAuthority> authorities = AuthorityUtils.createAuthorityList(userRoles);
+//	public static Collection<? extends GrantedAuthority > getAuthorities(User userDao) {
+//		String[] userRoles = userDao.getRoles().stream().map(role -> role.getName()).toArray(String[]::new);
+//		Collection<GrantedAuthority> authorities = AuthorityUtils.createAuthorityList(userRoles);
+//
+//		System.out.println(userDao);
+//
+//		return authorities;
+//	}
 
-		System.out.println(userDao);
-
-		return authorities;
-	}
-
-	public User save(UserDto user) {
-		User newUser = new User();
-		newUser.setUsername(user.getUsername());
-		newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
-		return userRepository.save(newUser);
-	}
+//	public User save(UserDto user) {
+//		User newUser = new User();
+//		newUser.setUsername(user.getUsername());
+//		newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
+//		return userRepository.save(newUser);
+//	}
 }
