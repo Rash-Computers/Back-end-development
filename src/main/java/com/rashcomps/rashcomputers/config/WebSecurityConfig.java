@@ -71,7 +71,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
 				.authorizeRequests()
 
 				.antMatchers(
-						"/api/v1/auths/sign-user","/api/v1/auths/login"
+						"/api/v1/auths/sign-user","/api/v1/auths/login","/api/v1/users"
 				).permitAll()
 
 				.anyRequest().authenticated().and().
