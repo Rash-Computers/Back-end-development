@@ -16,6 +16,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * @author : ntwari egide - Rash Computers
+ * @description:  Authentication Controller
+ */
+
+
 @RestController
 @CrossOrigin
 @RequestMapping("/api/v1/auths")

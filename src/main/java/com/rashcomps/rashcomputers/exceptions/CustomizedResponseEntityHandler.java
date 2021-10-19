@@ -11,6 +11,13 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import java.util.Date;
 
+
+/**
+ * @author : ntwari egide - Rash Computers
+ * @description:  Customized response handler
+ */
+
+
 @RestControllerAdvice
 @RestController
 public class CustomizedResponseEntityHandler extends ResponseEntityExceptionHandler {
@@ -32,6 +39,21 @@ public class CustomizedResponseEntityHandler extends ResponseEntityExceptionHand
 
     @ExceptionHandler(UserNotFoundException.class)
     public final ResponseEntity<Object> handlerUserNotFoundException(UserNotFoundException ex, WebRequest request) throws Exception {
+        ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),ex.getMessage(),request.getDescription(false));
+
+        return new ResponseEntity(exceptionResponse, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(LessonCategoryNotFoundException.class)
+    public final ResponseEntity<Object> handlerLessonCategoryNotFoundException(LessonCategoryNotFoundException ex, WebRequest request) throws Exception {
+        ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),ex.getMessage(),request.getDescription(false));
+
+        return new ResponseEntity(exceptionResponse, HttpStatus.NOT_FOUND);
+    }
+
+
+    @ExceptionHandler(LessonNotFoundException.class)
+    public final ResponseEntity<Object> handlerLessonNotFoundException(LessonNotFoundException ex, WebRequest request) throws Exception {
         ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),ex.getMessage(),request.getDescription(false));
 
         return new ResponseEntity(exceptionResponse, HttpStatus.NOT_FOUND);

@@ -1,5 +1,12 @@
 package com.rashcomps.rashcomputers.dtos;
 
+
+/**
+ * @author : ntwari egide - Rash Computers
+ * @description:  Update User dto
+ */
+
+
 public class UpdateUser {
     private String email;
 
