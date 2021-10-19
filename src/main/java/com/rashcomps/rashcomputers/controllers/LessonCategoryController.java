@@ -1,6 +1,8 @@
 package com.rashcomps.rashcomputers.controllers;
 
 import com.rashcomps.rashcomputers.dtos.AddCategoryLesson;
+import com.rashcomps.rashcomputers.dtos.UpdateCategoryLesson;
+import com.rashcomps.rashcomputers.dtos.UpdateLesson;
 import com.rashcomps.rashcomputers.models.LessonCategory;
 import com.rashcomps.rashcomputers.serviceImpl.LessonCategoryServiceImplementation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,6 +73,37 @@ public class LessonCategoryController {
 
 
         return ResponseEntity.created(location).body(savedCategory);
+
+    }
+
+    @PutMapping("/{id}")
+
+    private ResponseEntity<?> update(@RequestParam Long id ,@Valid @RequestBody UpdateCategoryLesson updateLesson){
+
+        LessonCategory savedCategory = lessonCategoryServiceImplementation.updateById(id, updateLesson);
+
+        URI location  = ServletUriComponentsBuilder
+
+                .fromCurrentRequest()
+
+                .path("/{id}")
+
+                .buildAndExpand(savedCategory.getId())
+
+                .toUri();
+
+
+        return ResponseEntity.created(location).body(savedCategory);
+
+    }
+
+    @DeleteMapping("/{id}")
+
+    private ResponseEntity<?> delete(@RequestParam Long id){
+
+        lessonCategoryServiceImplementation.deleteById(id);
+
+        return ResponseEntity.ok().build();
 
     }
 
