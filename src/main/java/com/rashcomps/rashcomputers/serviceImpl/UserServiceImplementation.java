@@ -16,6 +16,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * @author : ntwari egide - Rash Computers
+ * @description:  User service implementation
+ */
+
 @Service
 public class UserServiceImplementation implements UserService {
     @Autowired

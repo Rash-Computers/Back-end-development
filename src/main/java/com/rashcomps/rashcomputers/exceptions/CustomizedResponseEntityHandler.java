@@ -60,6 +60,12 @@ public class CustomizedResponseEntityHandler extends ResponseEntityExceptionHand
     }
 
 
+    @ExceptionHandler(LessonVideoNotFoundException.class)
+    public final ResponseEntity<Object> handlerLessonVideoNotFoundException(LessonVideoNotFoundException ex, WebRequest request) throws Exception {
+        ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),ex.getMessage(),request.getDescription(false));
+
+        return new ResponseEntity(exceptionResponse, HttpStatus.NOT_FOUND);
+    }
 
 
 }
