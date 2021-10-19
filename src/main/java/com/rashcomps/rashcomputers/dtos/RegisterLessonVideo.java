@@ -8,7 +8,7 @@ import com.rashcomps.rashcomputers.models.Lesson;
  */
 
 public class RegisterLessonVideo {
-    private Lesson relatedLesson;
+    private IdTemplate relatedLesson;
 
     private String videoUrl;
 
@@ -19,11 +19,18 @@ public class RegisterLessonVideo {
     public RegisterLessonVideo() {
     }
 
-    public Lesson getRelatedLesson() {
+    public RegisterLessonVideo(IdTemplate relatedLesson, String videoUrl, Boolean isPublished, Boolean isArchived) {
+        this.relatedLesson = relatedLesson;
+        this.videoUrl = videoUrl;
+        this.isPublished = isPublished;
+        this.isArchived = isArchived;
+    }
+
+    public IdTemplate getRelatedLesson() {
         return relatedLesson;
     }
 
-    public void setRelatedLesson(Lesson relatedLesson) {
+    public void setRelatedLesson(IdTemplate relatedLesson) {
         this.relatedLesson = relatedLesson;
     }
 
