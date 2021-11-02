@@ -17,6 +17,9 @@ import java.util.List;
  * @author : ntwari egide - Rash Computers
  * @description:  Lessons videos controller
  */
+@RestController
+@RequestMapping("/api/v1/lessons-videos")
+@CrossOrigin
 
 public class LessonsVideosController {
 

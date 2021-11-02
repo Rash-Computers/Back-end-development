@@ -9,13 +9,14 @@ import javax.persistence.*;
 
 
 @Entity
-@Table( name = "lessons_videos_table")
+@Table( name = "lesson_videos_table")
 public class LessonVideo {
 
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @OneToOne(cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
     private Lesson relatedLesson;
 
     private String videoUrl;

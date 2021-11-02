@@ -11,7 +11,7 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name = "lesson_category_table")
+@Table(name = "lessons_categories_table")
 public class LessonCategory {
     @Id
     @GeneratedValue
@@ -27,7 +27,7 @@ public class LessonCategory {
 
     private Boolean isArchived;
 
-    private LessonCategory(){}
+    public LessonCategory(){}
 
     public LessonCategory(String name, String description, String coverImageUrl) {
         this.name = name;

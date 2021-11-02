@@ -21,7 +21,7 @@ public class Lesson {
 
     private String contents;
 
-    @ManyToMany
+    @ManyToMany(cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<LessonCategory> lessonCategory;
 
    private String coverImageUrl;
