@@ -37,6 +37,12 @@ public class LessonVideoController {
 
     }
 
+    @GetMapping("/school-outline/{id}")
+    public LessonVideo findBySchoolOutline(@PathVariable Long id){
+        return lessonVideoService.findBySchoolOutline(id);
+
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id){
 

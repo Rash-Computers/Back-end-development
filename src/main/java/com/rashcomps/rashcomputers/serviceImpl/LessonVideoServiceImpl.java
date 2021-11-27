@@ -101,4 +101,12 @@ public class LessonVideoServiceImpl implements LessonVideoService {
 
         return lessonVideoFound;
     }
+
+    @Override
+    public LessonVideo findBySchoolOutline(Long schoolOutlineId) throws LessonVideoNotFoundException {
+
+        SchoolOutline schoolOutlineFound = schoolOutlineService.checkExistence(schoolOutlineId);
+
+        return lessonVideoRepository.findByRelatedSchoolOutline(schoolOutlineFound);
+    }
 }

@@ -25,4 +25,6 @@ public interface LessonVideoService {
 
     public LessonVideo delete(Long id)  throws LessonVideoNotFoundException;
 
+    public LessonVideo findBySchoolOutline(Long schoolOutlineId)  throws LessonVideoNotFoundException;
+
 }
