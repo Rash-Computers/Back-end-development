@@ -1,5 +1,5 @@
 /**
- * @author: Ntezirizaza Erneste
+ * @author: ntwari egide
  * @description:  Course prerequisite service implementation
  */
 
