@@ -7,11 +7,8 @@ package com.rashcomps.rashcomputers.controllers;
 
 
 import com.rashcomps.rashcomputers.dtos.CourseCurriculumDto;
-import com.rashcomps.rashcomputers.dtos.CoursePrerequisiteDto;
 import com.rashcomps.rashcomputers.models.CourseCurriculum;
-import com.rashcomps.rashcomputers.models.CoursePrerequisite;
 import com.rashcomps.rashcomputers.serviceImpl.CourseCurriculumServiceImpl;
-import com.rashcomps.rashcomputers.serviceImpl.CoursePrerequisiteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

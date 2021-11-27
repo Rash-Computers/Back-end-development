@@ -1,6 +1,6 @@
 /**
  * @author: ntwari egide
- * @description: level enum
+ * @description: course prerequisite model
  */
 
 package com.rashcomps.rashcomputers.models;
