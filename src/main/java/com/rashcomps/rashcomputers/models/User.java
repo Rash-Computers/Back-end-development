@@ -1,34 +1,84 @@
+/**
+ * @author: ntwari egide
+ * @description: User modal
+ */
+
+/**
+ * first name
+ * second name
+ * username
+ * email
+ * profile pic url
+ * associated project
+ * status
+ * tel number 1
+ * tel number 2
+ * gender
+ * roles
+ */
+
 package com.rashcomps.rashcomputers.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table( name = "users_table")
+@Table(name = "users")
 public class User {
+
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private String firstName;
+
+    private String secondName;
+
+    private String username;
 
     private String email;
 
-    private String name;
+    private String firstTelPhoneNumber;
 
+    private String secondTelPhoneNumber;
+
+    private String profilePicturePath;
+
+    @Enumerated(EnumType.STRING)
+    private GenderEnum gender;
+
+//    @JsonIgnore
     private String password;
 
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private StatusEnum status;
 
-    public User() {
+    @ManyToMany()
+    private List<Role> roles;
+
+    public User(){}
+
+    public User(String username, String email, String password, StatusEnum status, List<Role> roles) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.gender = GenderEnum.NOT_SET;
+        this.status = status;
+        this.roles = roles;
     }
 
-    public User(String email, String name, String password, String status) {
+    public User(String firstName, String secondName, String username, String email, String firstTelPhoneNumber, String secondTelPhoneNumber, String profilePicturePath, GenderEnum gender, String password, StatusEnum status, List<Role> roles) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.username = username;
         this.email = email;
-        this.name = name;
+        this.firstTelPhoneNumber = firstTelPhoneNumber;
+        this.secondTelPhoneNumber = secondTelPhoneNumber;
+        this.profilePicturePath = profilePicturePath;
+        this.gender = gender;
         this.password = password;
         this.status = status;
+        this.roles = roles;
     }
 
     public Long getId() {
@@ -39,6 +89,30 @@ public class User {
         this.id = id;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -47,12 +121,36 @@ public class User {
         this.email = email;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstTelPhoneNumber() {
+        return firstTelPhoneNumber;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstTelPhoneNumber(String firstTelPhoneNumber) {
+        this.firstTelPhoneNumber = firstTelPhoneNumber;
+    }
+
+    public String getSecondTelPhoneNumber() {
+        return secondTelPhoneNumber;
+    }
+
+    public void setSecondTelPhoneNumber(String secondTelPhoneNumber) {
+        this.secondTelPhoneNumber = secondTelPhoneNumber;
+    }
+
+    public String getProfilePicturePath() {
+        return profilePicturePath;
+    }
+
+    public void setProfilePicturePath(String profilePicturePath) {
+        this.profilePicturePath = profilePicturePath;
+    }
+
+    public GenderEnum getGender() {
+        return gender;
+    }
+
+    public void setGender(GenderEnum gender) {
+        this.gender = gender;
     }
 
     public String getPassword() {
@@ -63,22 +161,37 @@ public class User {
         this.password = password;
     }
 
-    public String getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
+    }
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", secondName='" + secondName + '\'' +
+                ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
-                ", name='" + name + '\'' +
+                ", firstTelPhoneNumber='" + firstTelPhoneNumber + '\'' +
+                ", secondTelPhoneNumber='" + secondTelPhoneNumber + '\'' +
+                ", profilePicturePath='" + profilePicturePath + '\'' +
+                ", gender=" + gender +
                 ", password='" + password + '\'' +
-                ", status='" + status + '\'' +
+                ", status=" + status +
+                ", roles=" + roles +
                 '}';
     }
 }

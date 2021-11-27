@@ -1,8 +1,3 @@
-/**
- * @author: ntwari egide
- * @description: update user dto
- */
-
 package com.rashcomps.rashcomputers.dtos;
 
 
@@ -13,7 +8,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import java.util.List;
 
-public class UpdateUser {
+public class SignupUserDto {
     private String firstName;
 
     private String secondName;
@@ -36,24 +31,17 @@ public class UpdateUser {
     @Enumerated(EnumType.STRING)
     private StatusEnum status;
 
-    private List<IdTemplate> roles;
+    private List<IdTemplate> rolesIds;
 
-
-    public UpdateUser() {
+    public SignupUserDto() {
     }
 
-    public UpdateUser(String firstName, String secondName, String username, String email, String firstTelPhoneNumber, String secondTelPhoneNumber, String profilePicturePath, GenderEnum gender, String password, StatusEnum status, List<IdTemplate> roles) {
-        this.firstName = firstName;
-        this.secondName = secondName;
+    public SignupUserDto(String username, String email, String password, StatusEnum status, List<IdTemplate> rolesIds) {
         this.username = username;
         this.email = email;
-        this.firstTelPhoneNumber = firstTelPhoneNumber;
-        this.secondTelPhoneNumber = secondTelPhoneNumber;
-        this.profilePicturePath = profilePicturePath;
-        this.gender = gender;
         this.password = password;
         this.status = status;
-        this.roles = roles;
+        this.rolesIds = rolesIds;
     }
 
     public String getFirstName() {
@@ -136,17 +124,17 @@ public class UpdateUser {
         this.status = status;
     }
 
-    public List<IdTemplate> getRoles() {
-        return roles;
+    public List<IdTemplate> getRolesIds() {
+        return rolesIds;
     }
 
-    public void setRoles(List<IdTemplate> roles) {
-        this.roles = roles;
+    public void setRolesIds(List<IdTemplate> rolesIds) {
+        this.rolesIds = rolesIds;
     }
 
     @Override
     public String toString() {
-        return "UpdateUser{" +
+        return "SignupUserDto{" +
                 "firstName='" + firstName + '\'' +
                 ", secondName='" + secondName + '\'' +
                 ", username='" + username + '\'' +
@@ -157,7 +145,7 @@ public class UpdateUser {
                 ", gender=" + gender +
                 ", password='" + password + '\'' +
                 ", status=" + status +
-                ", roles=" + roles +
+                ", rolesIds=" + rolesIds +
                 '}';
     }
 }

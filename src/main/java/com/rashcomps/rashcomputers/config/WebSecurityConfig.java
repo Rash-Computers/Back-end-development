@@ -1,9 +1,13 @@
+/**
+ * @author: ntwari egide
+ * @description: Web security configuration
+ */
+
 package com.rashcomps.rashcomputers.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -27,12 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
 	private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
 
 	@Autowired
-	private UserDetailsService userDetailsService;
-
-	@Bean
-	public UserDetailsService userDetailsService() {
-		return super.userDetailsService();
-	}
+	private UserDetailsService jwtUserDetailsService;
 
 	@Autowired
 	private JwtRequestFilter jwtRequestFilter;
@@ -40,7 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 
-		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+		auth.userDetailsService(jwtUserDetailsService).passwordEncoder(passwordEncoder());
 
 	}
 
@@ -69,12 +68,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
 				.disable()
 
 				.authorizeRequests()
-				.antMatchers("/swagger-ui.html").permitAll()
 
 				.antMatchers(
-						"/api/v1/auths/sign-user","/api/v1/auths/login","/api/v1/users","/swagger-ui.html","/swagger-ui-custom.html","/v3/api-docs/**",
+						"/login",
+						"/signup-user",
+						"/v2/api-docs",
+						"/api/v1/roles/**",
+						"/api/v1/users/**",
 						"/configuration/ui",
-						"/swagger-resources/**"
+						"/swagger-resources/**",
+						"/configuration/security",
+						"/swagger-ui.html",
+						"/signup-user",
+						"/webjars/**"
 				).permitAll()
 
 				.anyRequest().authenticated().and().

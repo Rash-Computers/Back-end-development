@@ -1,24 +1,54 @@
 package com.rashcomps.rashcomputers.dtos;
 
-/**
- * @author : ntwari egide - Rash Computers
- * @description:  Create User dto
- */
+import java.util.List;
 
 public class CreateUser {
+
+    private String firstName;
+
+    private String secondName;
+
+    private String username;
+
     private String email;
 
-    private String name;
+    private String firstTelPhoneNumber;
+
+    private String secondTelPhoneNumber;
+
+    private String profilePicturePath;
+
+    private String gender;
 
     private String password;
 
     private String status;
 
-    public CreateUser(String email, String name, String password) {
-        this.email = email;
-        this.name = name;
-        this.password = password;
-        this.status = "INACTIVE";
+    private List<IdTemplate> roles;
+
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail() {
@@ -29,12 +59,57 @@ public class CreateUser {
         this.email = email;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstTelPhoneNumber() {
+        return firstTelPhoneNumber;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstTelPhoneNumber(String firstTelPhoneNumber) {
+        this.firstTelPhoneNumber = firstTelPhoneNumber;
+    }
+
+    public String getSecondTelPhoneNumber() {
+        return secondTelPhoneNumber;
+    }
+
+    public void setSecondTelPhoneNumber(String secondTelPhoneNumber) {
+        this.secondTelPhoneNumber = secondTelPhoneNumber;
+    }
+
+    public String getProfilePicturePath() {
+        return profilePicturePath;
+    }
+
+    public void setProfilePicturePath(String profilePicturePath) {
+        this.profilePicturePath = profilePicturePath;
+    }
+
+    public CreateUser() {
+    }
+
+    public CreateUser(String firstName, String secondName, String username, String email, String firstTelPhoneNumber, String secondTelPhoneNumber, String profilePicturePath, String gender, String password, String status, List<IdTemplate> roles) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.username = username;
+        this.email = email;
+        this.firstTelPhoneNumber = firstTelPhoneNumber;
+        this.secondTelPhoneNumber = secondTelPhoneNumber;
+        this.profilePicturePath = profilePicturePath;
+        this.gender = gender;
+        this.password = password;
+        this.status = status;
+        this.roles = roles;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getPassword() {
@@ -49,17 +124,11 @@ public class CreateUser {
         return status;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public List<IdTemplate> getRoles() {
+        return roles;
     }
 
-    @Override
-    public String toString() {
-        return "CreateUser{" +
-                "email='" + email + '\'' +
-                ", name='" + name + '\'' +
-                ", password='" + password + '\'' +
-                ", status='" + status + '\'' +
-                '}';
+    public void setRoles(List<IdTemplate> roles) {
+        this.roles = roles;
     }
 }
