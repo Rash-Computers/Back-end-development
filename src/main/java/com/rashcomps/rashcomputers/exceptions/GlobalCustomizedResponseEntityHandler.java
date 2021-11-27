@@ -72,4 +72,11 @@ public class GlobalCustomizedResponseEntityHandler extends ResponseEntityExcepti
         return new ResponseEntity(exceptionResponse, HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(CourseInstructorNotFoundException.class)
+    public final ResponseEntity<Object> handleCourseInstructorNotFoundException(CourseInstructorNotFoundException ex, WebRequest request) throws Exception {
+        ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),ex.getMessage(),request.getDescription(false));
+
+        return new ResponseEntity(exceptionResponse, HttpStatus.NOT_FOUND);
+    }
+
 }
