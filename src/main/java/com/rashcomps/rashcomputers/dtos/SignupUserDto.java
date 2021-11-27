@@ -17,10 +17,6 @@ public class SignupUserDto {
 
     private String email;
 
-    private String firstTelPhoneNumber;
-
-    private String secondTelPhoneNumber;
-
     private String profilePicturePath;
 
     @Enumerated(EnumType.STRING)
@@ -76,22 +72,6 @@ public class SignupUserDto {
         this.email = email;
     }
 
-    public String getFirstTelPhoneNumber() {
-        return firstTelPhoneNumber;
-    }
-
-    public void setFirstTelPhoneNumber(String firstTelPhoneNumber) {
-        this.firstTelPhoneNumber = firstTelPhoneNumber;
-    }
-
-    public String getSecondTelPhoneNumber() {
-        return secondTelPhoneNumber;
-    }
-
-    public void setSecondTelPhoneNumber(String secondTelPhoneNumber) {
-        this.secondTelPhoneNumber = secondTelPhoneNumber;
-    }
-
     public String getProfilePicturePath() {
         return profilePicturePath;
     }
@@ -139,8 +119,6 @@ public class SignupUserDto {
                 ", secondName='" + secondName + '\'' +
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
-                ", firstTelPhoneNumber='" + firstTelPhoneNumber + '\'' +
-                ", secondTelPhoneNumber='" + secondTelPhoneNumber + '\'' +
                 ", profilePicturePath='" + profilePicturePath + '\'' +
                 ", gender=" + gender +
                 ", password='" + password + '\'' +

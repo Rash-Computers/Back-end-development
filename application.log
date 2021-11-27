@@ -3664,3 +3664,66 @@ Caused by: java.sql.SQLException: Referencing column 'roles_id' and referenced c
 2021-11-27 05:35:53.301  INFO 11692 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-11-27 05:35:53.306  INFO 11692 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-11-27 05:35:54.307  INFO 11692 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-27 10:22:59.094  INFO 12344 --- [restartedMain] c.r.r.RashcomputersApplication           : Starting RashcomputersApplication using Java 11.0.13 on DESKTOP-R5HSSFQ with PID 12344 (C:\Users\ntwari\Documents\ntwari egide docs\Rash computers\Back-end-development\target\classes started by ntwari in C:\Users\ntwari\Documents\ntwari egide docs\Rash computers\Back-end-development)
+2021-11-27 10:22:59.174  INFO 12344 --- [restartedMain] c.r.r.RashcomputersApplication           : No active profile set, falling back to default profiles: default
+2021-11-27 10:22:59.386  INFO 12344 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-11-27 10:22:59.388  INFO 12344 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-11-27 10:23:08.147  INFO 12344 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-27 10:23:08.362  INFO 12344 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 193 ms. Found 7 JPA repository interfaces.
+2021-11-27 10:23:09.306  INFO 12344 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7037aeb2' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-27 10:23:09.316  INFO 12344 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-27 10:23:11.064  INFO 12344 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-27 10:23:11.097  INFO 12344 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-27 10:23:11.100  INFO 12344 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-27 10:23:12.396  INFO 12344 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-11-27 10:23:12.459  INFO 12344 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-27 10:23:12.459  INFO 12344 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 12919 ms
+2021-11-27 10:23:12.566  INFO 12344 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-27 10:23:21.682  INFO 12344 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-27 10:23:21.705  INFO 12344 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://ec2-54-225-228-142.compute-1.amazonaws.com:5432/db34lpcd15lk1o'
+2021-11-27 10:23:22.336  INFO 12344 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-27 10:23:22.552  INFO 12344 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-11-27 10:23:22.956  INFO 12344 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-27 10:23:23.441  INFO 12344 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-27 10:23:36.328  INFO 12344 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-27 10:23:36.338  INFO 12344 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-27 10:23:36.974  WARN 12344 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-27 10:23:38.274  INFO 12344 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-27 10:23:38.638  INFO 12344 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-27 10:23:39.362  INFO 12344 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@75848405, org.springframework.security.web.context.SecurityContextPersistenceFilter@44fa1fd6, org.springframework.security.web.header.HeaderWriterFilter@586eb82d, org.springframework.web.filter.CorsFilter@f498cff, org.springframework.security.web.authentication.logout.LogoutFilter@623739c, com.rashcomps.rashcomputers.config.JwtRequestFilter@74ffc4e5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2b4d2594, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@750b8a8c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5fef277c, org.springframework.security.web.session.SessionManagementFilter@173eca35, org.springframework.security.web.access.ExceptionTranslationFilter@124585bd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4d236359]
+2021-11-27 10:23:40.354  INFO 12344 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-27 10:23:40.357  INFO 12344 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-27 10:23:40.438  INFO 12344 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-27 10:23:40.722  INFO 12344 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-27 10:23:41.156  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_1
+2021-11-27 10:23:41.183  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByIdUsingGET_1
+2021-11-27 10:23:41.199  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllUsingGET_1
+2021-11-27 10:23:41.205  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUsingPOST_1
+2021-11-27 10:23:41.208  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_1
+2021-11-27 10:23:41.220  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_2
+2021-11-27 10:23:41.225  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByIdUsingGET_2
+2021-11-27 10:23:41.232  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllUsingGET_2
+2021-11-27 10:23:41.239  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUsingPOST_2
+2021-11-27 10:23:41.245  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_2
+2021-11-27 10:23:41.252  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_3
+2021-11-27 10:23:41.255  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByIdUsingGET_3
+2021-11-27 10:23:41.257  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllUsingGET_3
+2021-11-27 10:23:41.265  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUsingPOST_3
+2021-11-27 10:23:41.270  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_3
+2021-11-27 10:23:41.274  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_4
+2021-11-27 10:23:41.282  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByIdUsingGET_4
+2021-11-27 10:23:41.286  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllUsingGET_4
+2021-11-27 10:23:41.296  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUsingPOST_4
+2021-11-27 10:23:41.300  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_4
+2021-11-27 10:23:41.304  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_5
+2021-11-27 10:23:41.313  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByIdUsingGET_5
+2021-11-27 10:23:41.319  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllUsingGET_5
+2021-11-27 10:23:41.330  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUsingPOST_5
+2021-11-27 10:23:41.333  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_5
+2021-11-27 10:23:41.336  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_6
+2021-11-27 10:23:41.344  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUsingPOST_6
+2021-11-27 10:23:41.367  INFO 12344 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_6
+2021-11-27 10:23:41.490  INFO 12344 --- [restartedMain] c.r.r.RashcomputersApplication           : Started RashcomputersApplication in 43.92 seconds (JVM running for 49.858)
+2021-11-27 10:23:41.929  INFO 12344 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-27 10:23:42.036  INFO 12344 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-27 10:23:44.278  INFO 12344 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

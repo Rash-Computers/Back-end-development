@@ -38,9 +38,6 @@ public class User {
 
     private String email;
 
-    private String firstTelPhoneNumber;
-
-    private String secondTelPhoneNumber;
 
     private String profilePicturePath;
 
@@ -67,13 +64,11 @@ public class User {
         this.roles = roles;
     }
 
-    public User(String firstName, String secondName, String username, String email, String firstTelPhoneNumber, String secondTelPhoneNumber, String profilePicturePath, GenderEnum gender, String password, StatusEnum status, List<Role> roles) {
+    public User(String firstName, String secondName, String username, String email, String profilePicturePath, GenderEnum gender, String password, StatusEnum status, List<Role> roles) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.username = username;
         this.email = email;
-        this.firstTelPhoneNumber = firstTelPhoneNumber;
-        this.secondTelPhoneNumber = secondTelPhoneNumber;
         this.profilePicturePath = profilePicturePath;
         this.gender = gender;
         this.password = password;
@@ -121,21 +116,7 @@ public class User {
         this.email = email;
     }
 
-    public String getFirstTelPhoneNumber() {
-        return firstTelPhoneNumber;
-    }
 
-    public void setFirstTelPhoneNumber(String firstTelPhoneNumber) {
-        this.firstTelPhoneNumber = firstTelPhoneNumber;
-    }
-
-    public String getSecondTelPhoneNumber() {
-        return secondTelPhoneNumber;
-    }
-
-    public void setSecondTelPhoneNumber(String secondTelPhoneNumber) {
-        this.secondTelPhoneNumber = secondTelPhoneNumber;
-    }
 
     public String getProfilePicturePath() {
         return profilePicturePath;
@@ -184,9 +165,7 @@ public class User {
                 ", firstName='" + firstName + '\'' +
                 ", secondName='" + secondName + '\'' +
                 ", username='" + username + '\'' +
-                ", email='" + email + '\'' +
-                ", firstTelPhoneNumber='" + firstTelPhoneNumber + '\'' +
-                ", secondTelPhoneNumber='" + secondTelPhoneNumber + '\'' +
+                ", email='" + email + '\''+
                 ", profilePicturePath='" + profilePicturePath + '\'' +
                 ", gender=" + gender +
                 ", password='" + password + '\'' +

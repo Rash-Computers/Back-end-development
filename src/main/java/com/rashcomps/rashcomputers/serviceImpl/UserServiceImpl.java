@@ -122,8 +122,6 @@ public class UserServiceImpl implements UserServices {
                 updateUser.getSecondName(),
                 updateUser.getUsername(),
                 updateUser.getEmail(),
-                updateUser.getFirstTelPhoneNumber(),
-                updateUser.getSecondTelPhoneNumber(),
                 updateUser.getProfilePicturePath(),
                 updateUser.getGender(),
                 bcryptEncoder.encode(updateUser.getPassword()),

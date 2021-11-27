@@ -22,10 +22,6 @@ public class UpdateUser {
 
     private String email;
 
-    private String firstTelPhoneNumber;
-
-    private String secondTelPhoneNumber;
-
     private String profilePicturePath;
 
     @Enumerated(EnumType.STRING)
@@ -42,13 +38,11 @@ public class UpdateUser {
     public UpdateUser() {
     }
 
-    public UpdateUser(String firstName, String secondName, String username, String email, String firstTelPhoneNumber, String secondTelPhoneNumber, String profilePicturePath, GenderEnum gender, String password, StatusEnum status, List<IdTemplate> roles) {
+    public UpdateUser(String firstName, String secondName, String username, String email, String profilePicturePath, GenderEnum gender, String password, StatusEnum status, List<IdTemplate> roles) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.username = username;
         this.email = email;
-        this.firstTelPhoneNumber = firstTelPhoneNumber;
-        this.secondTelPhoneNumber = secondTelPhoneNumber;
         this.profilePicturePath = profilePicturePath;
         this.gender = gender;
         this.password = password;
@@ -86,22 +80,6 @@ public class UpdateUser {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getFirstTelPhoneNumber() {
-        return firstTelPhoneNumber;
-    }
-
-    public void setFirstTelPhoneNumber(String firstTelPhoneNumber) {
-        this.firstTelPhoneNumber = firstTelPhoneNumber;
-    }
-
-    public String getSecondTelPhoneNumber() {
-        return secondTelPhoneNumber;
-    }
-
-    public void setSecondTelPhoneNumber(String secondTelPhoneNumber) {
-        this.secondTelPhoneNumber = secondTelPhoneNumber;
     }
 
     public String getProfilePicturePath() {
@@ -151,8 +129,6 @@ public class UpdateUser {
                 ", secondName='" + secondName + '\'' +
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
-                ", firstTelPhoneNumber='" + firstTelPhoneNumber + '\'' +
-                ", secondTelPhoneNumber='" + secondTelPhoneNumber + '\'' +
                 ", profilePicturePath='" + profilePicturePath + '\'' +
                 ", gender=" + gender +
                 ", password='" + password + '\'' +
