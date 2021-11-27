@@ -37,4 +37,25 @@ public class GlobalCustomizedResponseEntityHandler extends ResponseEntityExcepti
         return new ResponseEntity(exceptionResponse, HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(RoleNotFoundException.class)
+    public final ResponseEntity<Object> handlerRoleNotFoundException(RoleNotFoundException ex, WebRequest request) throws Exception {
+        ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),ex.getMessage(),request.getDescription(false));
+
+        return new ResponseEntity(exceptionResponse, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(SchoolNotFoundException.class)
+    public final ResponseEntity<Object> handlerSchoolNotFoundException(SchoolNotFoundException ex, WebRequest request) throws Exception {
+        ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),ex.getMessage(),request.getDescription(false));
+
+        return new ResponseEntity(exceptionResponse, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(SchoolOutlineNotFoundException.class)
+    public final ResponseEntity<Object> handlerSchoolOutlineNotFoundException(SchoolOutlineNotFoundException ex, WebRequest request) throws Exception {
+        ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),ex.getMessage(),request.getDescription(false));
+
+        return new ResponseEntity(exceptionResponse, HttpStatus.NOT_FOUND);
+    }
+
 }

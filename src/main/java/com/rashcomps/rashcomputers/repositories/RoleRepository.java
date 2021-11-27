@@ -1,5 +1,9 @@
-package com.rashcomps.rashcomputers.repositories;
+/**
+ * @author: ntwari egide
+ * @description: role repository
+ */
 
+package com.rashcomps.rashcomputers.repositories;
 
 import com.rashcomps.rashcomputers.models.Role;
 import org.springframework.data.jpa.repository.JpaRepository;

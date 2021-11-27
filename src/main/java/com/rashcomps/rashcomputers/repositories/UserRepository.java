@@ -1,3 +1,9 @@
+/**
+ * @author: ntwari egide
+ * @description: user repository
+ */
+
+
 package com.rashcomps.rashcomputers.repositories;
 
 import com.rashcomps.rashcomputers.models.User;
