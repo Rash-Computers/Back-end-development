@@ -74,6 +74,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
 						"/signup-user",
 						"/v2/api-docs",
 						"/api/v1/roles/**",
+						"/api/v1/auths/**",
 						"/api/v1/users/**",
 						"/configuration/ui",
 						"/swagger-resources/**",
