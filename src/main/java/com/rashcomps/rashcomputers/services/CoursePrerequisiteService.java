@@ -25,4 +25,6 @@ public interface CoursePrerequisiteService {
 
     public CoursePrerequisite delete(Long id)  throws CoursePrerequisiteNotFoundException;
 
+    public List<CoursePrerequisite> findBySchool(Long id)  throws CoursePrerequisiteNotFoundException;
+
 }

@@ -25,4 +25,6 @@ public interface CourseCurriculumService {
 
     public CourseCurriculum delete(Long id)  throws CourseCurriculumNotFoundException;
 
+    public List<CourseCurriculum> findBySchool(Long schoolId)  throws CourseCurriculumNotFoundException;
+
 }

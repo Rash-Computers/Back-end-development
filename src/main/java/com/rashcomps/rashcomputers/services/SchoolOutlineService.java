@@ -25,4 +25,6 @@ public interface SchoolOutlineService {
 
     public Boolean delete(Long id)  throws SchoolNotFoundException;
 
+    public List<SchoolOutline> findBySchool(Long schoolId)  throws SchoolNotFoundException;
+
 }

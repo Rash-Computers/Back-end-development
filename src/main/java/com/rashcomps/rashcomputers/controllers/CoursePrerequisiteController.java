@@ -40,6 +40,12 @@ public class CoursePrerequisiteController {
 
     }
 
+    @GetMapping("/schools/{id}")
+    public List<CoursePrerequisite> findBySchool(@PathVariable Long id){
+        return coursePrerequisiteService.findBySchool(id);
+
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id){
 

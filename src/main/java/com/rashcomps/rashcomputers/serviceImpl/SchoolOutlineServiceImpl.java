@@ -85,4 +85,12 @@ public class SchoolOutlineServiceImpl  implements SchoolOutlineService {
 
         return true;
     }
+
+    @Override
+    public List<SchoolOutline> findBySchool(Long schoolId) throws SchoolNotFoundException {
+
+        School school = schoolService.findById(schoolId);
+
+        return schoolOutlineRepository.findBySchool(school);
+    }
 }

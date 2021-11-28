@@ -87,4 +87,12 @@ public class CourseCurriculumServiceImpl implements CourseCurriculumService {
 
         return courseCurriculum;
     }
+
+    @Override
+    public List<CourseCurriculum> findBySchool(Long schoolId) throws CourseCurriculumNotFoundException {
+
+        School school = schoolService.checkExistence(schoolId);
+
+        return courseCurriculumRepository.findBySchool(school);
+    }
 }

@@ -118,4 +118,11 @@ public class CourseInstructorServiceImpl implements CourseInstructorService {
 
         return courseInstructor;
     }
+
+    @Override
+    public List<CourseInstructor> findBySchool(Long schoolId) throws CourseInstructorNotFoundException {
+        School school = schoolService.checkExistence(schoolId);
+
+        return courseInstructorRepository.findBySchool(school);
+    }
 }

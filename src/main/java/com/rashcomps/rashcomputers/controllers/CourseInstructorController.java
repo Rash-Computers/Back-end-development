@@ -37,6 +37,13 @@ public class CourseInstructorController {
 
     }
 
+
+    @GetMapping("/schools/{id}")
+    public List<CourseInstructor> findBySchool(@PathVariable Long id){
+        return courseInstructorService.findBySchool(id);
+
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id){
 

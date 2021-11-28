@@ -77,7 +77,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
 						"/api/v1/auths/**",
 						"/api/v1/users/**",
 						"/api/v1/schools/**",
-						"/api/v1/school_outlines_tbl/**",
+						"/api/v1/school_outlines/**",
 						"/api/v1/lessons_videos/**",
 						"/api/v1/course_prerequisite/**",
 						"/api/v1/courses_curriculums/**",

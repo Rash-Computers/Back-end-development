@@ -25,4 +25,6 @@ public interface CourseInstructorService {
 
     public CourseInstructor delete(Long id)  throws CourseInstructorNotFoundException;
 
+    public List<CourseInstructor> findBySchool(Long schoolId)  throws CourseInstructorNotFoundException;
+
 }

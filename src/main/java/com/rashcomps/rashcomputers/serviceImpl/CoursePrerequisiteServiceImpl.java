@@ -99,4 +99,11 @@ public class CoursePrerequisiteServiceImpl implements CoursePrerequisiteService 
 
         return coursePrerequisite;
     }
+
+    @Override
+    public List<CoursePrerequisite> findBySchool(Long id) throws CoursePrerequisiteNotFoundException {
+        School school = schoolService.checkExistence(id);
+
+        return coursePrerequisiteRepository.findBySchools(school);
+    }
 }

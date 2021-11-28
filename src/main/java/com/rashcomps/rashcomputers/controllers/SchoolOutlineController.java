@@ -20,7 +20,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/api/v1/school_outlines_tbl")
+@RequestMapping("/api/v1/school_outlines")
 
 public class SchoolOutlineController {
 
@@ -35,6 +35,12 @@ public class SchoolOutlineController {
     @GetMapping("/{id}")
     public SchoolOutline findById(@PathVariable Long id){
         return schoolOutlineService.findById(id);
+
+    }
+
+    @GetMapping("/schools/{id}")
+    public List<SchoolOutline> findBySchool(@PathVariable Long id){
+        return schoolOutlineService.findBySchool(id);
 
     }
 
